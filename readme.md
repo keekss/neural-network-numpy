@@ -1,4 +1,4 @@
-# Neural network using `numpy` and `hyperopt`
+# Neural network using `numpy`
 
 ### Overview
 
