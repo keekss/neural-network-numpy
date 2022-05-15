@@ -11,7 +11,7 @@ Later hyperparameter tuning is done with the `hyperopt` library.
 Attribute | Value | Notes
 :-- | :-- | :--
 Hidden layer activations | ReLU | i.e. Rectified Linear Unit. `ReLU(x) = max(0,x)`
-Output activation | Softmax | 
+Output activation | Softmax | Normalized to prevent overflow
 Loss metric | Categorical cross-entropy
 Gradient descent update rule | Adam | i.e. Adaptive Movement Estimation
 Overfitting prevention | Dropout | Dropout rates can be manual or ranged and reshuffled (see `fit` function)
