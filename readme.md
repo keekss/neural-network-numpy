@@ -10,7 +10,7 @@ Later hyperparameter tuning is done with the `hyperopt` library.
 
 Attribute | Value | Notes
 :-- | :-- | :--
-Hidden layer activations | ReLU | i.e. Rectified Linear Unit. $$ReLU(x) = max(0,x)$$
+Hidden layer activations | ReLU | i.e. Rectified Linear Unit. ReLU(x) = max(0,x)
 Output activation | Softmax | 
 Loss metric | Categorical cross-entropy
 Gradient descent update rule | Adam | i.e. Adaptive Movement Estimation
