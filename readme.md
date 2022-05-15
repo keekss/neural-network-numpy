@@ -1,4 +1,4 @@
-# Model: Neural Network
+# Neural network using `numpy` and `hyperopt`
 
 ### Overview
 
