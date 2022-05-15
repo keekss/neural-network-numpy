@@ -1,0 +1,7 @@
+Hyperparameter,Value
+h_layers,5
+heights,"expanding, (200 => 140)"
+lr,0.01
+batch_size,512
+keep_rates,"range: (0.9, 1)"
+reshuff,True

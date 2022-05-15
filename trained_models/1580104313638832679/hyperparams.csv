@@ -1,0 +1,9 @@
+Hyperparameter,Value
+h_layers,2
+heights,"contracting, (457 => 370)"
+lr,0.0003
+batch_size,3366
+keep_rates,"range: (0.7964142482338132, 1)"
+reshuff,False
+max_strikes,2
+max_consec,2

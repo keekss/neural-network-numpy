@@ -1,0 +1,3 @@
+data/*
+summary_backups/*
+trained_models/*.pbz2
