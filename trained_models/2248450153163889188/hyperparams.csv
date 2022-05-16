@@ -1,0 +1,9 @@
+Hyperparameter,Value
+h_layers,11
+heights,"expanding, (1272 => 1706)"
+lr,0.0006506226404174016
+batch_size,9990
+keep_rates,"range: (0.9715114110487995, 1)"
+reshuff,False
+max_strikes,2
+max_consec,2
