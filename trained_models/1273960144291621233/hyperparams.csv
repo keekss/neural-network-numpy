@@ -1,0 +1,9 @@
+Hyperparameter,Value
+h_layers,9
+heights,"flat, (427 => 427)"
+lr,0.0007390155040921776
+batch_size,2767
+keep_rates,"range: (0.8856877962937623, 1)"
+reshuff,False
+max_strikes,2
+max_consec,2

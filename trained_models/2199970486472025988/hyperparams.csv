@@ -1,0 +1,9 @@
+Hyperparameter,Value
+h_layers,2
+heights,"contracting, (1910 => 1854)"
+lr,0.00038090438301479365
+batch_size,4047
+keep_rates,"range: (0.9399264051370791, 1)"
+reshuff,False
+max_strikes,2
+max_consec,2
