@@ -2,11 +2,11 @@
 
 ### Overview
 
-Neural network with a variable number of hidden layers, neurons, and various training hyperparameters.
+Neural network with configuration options for hidden layer count, size, etc.
 
-Training (`fit` method) attribute tables and progress graphs during training depending on `verbosity`. After training, "summary" stats are written to `.csv` format by default.
+Verbosity options for traning (`fit()` method) to print attribute tables and progress graphs during training. After training, "summary" stats are written to `.csv` format by default.
 
-Later hyperparameter tuning is done with the `hyperopt` library.
+Later hyperparameter tuning is done with [HyperOpt](https://github.com/hyperopt/hyperopt).
 
 Attribute | Value | Notes
 :-- | :-- | :--
