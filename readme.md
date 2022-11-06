@@ -1,6 +1,6 @@
-# Neural network using `numpy`
+# Neural network using NumPy
 
-### Overview
+## Overview
 
 Neural network with configuration options for hidden layer count, size, etc.
 
