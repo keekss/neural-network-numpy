@@ -1,12 +1,35 @@
 # Neural network using NumPy
 
+This project implements a neural network from scratch using NumPy, allowing the user to load their own data (or use the provided sample data), save training results, and tune hyperaparemeters dynamically with [Hyperopt](TODO)
+
+
+TODO tag relevant terms
+
+## File overview
+
+TODO
+
 ## Overview
 
-Neural network with configuration options for hidden layer count, size, etc.
+### Customizable attributes
+
+#### Neural network structure
+
+* Depth (number of hidden layers)
+* Height (number of neurons at each layer).  Height can be assigned either:
+  * Automatically, via chosen "shape", or:
+  * Manually, with the
+* , and various training hyperparameters.
+
+#### Training
+
+
 
 Verbosity options for traning (`fit()` method) to print attribute tables and progress graphs during training. After training, "summary" stats are written to `.csv` format by default.
 
-Later hyperparameter tuning is done with [HyperOpt](https://github.com/hyperopt/hyperopt).
+Later hyperparameter tuning is done with the `hyperopt` library.
+
+### Static attributes
 
 Attribute | Value | Notes
 :-- | :-- | :--
@@ -19,7 +42,9 @@ Overfitting prevention | Dropout | Dropout rates can be manual or ranged and res
 Weights are stored as member variables via matrices.
 
 ## Initialization
+
 ### General structure
+
 Parameter | Meaning | Fashion MNIST Value
 :-- | :-- | --:
 `inputs` | Number of input features | `784`
@@ -52,6 +77,7 @@ For example, `h_layers=3`, `shape='contracting'`, `max_height=500`, `shrink_fact
 # Training (`fit` function)
 
 ## General hyperparameters
+
 | Parameter(s) | Meaning | Type | Notes
 | :-- | :-- | :-- | :--
 | `X`, `y` | Training data | `np.array` | Examples stored as rows
@@ -61,6 +87,7 @@ For example, `h_layers=3`, `shape='contracting'`, `max_height=500`, `shrink_fact
 
 
 ## Dropout: type
+
 The model will be trained according to one either type of dropout (not both):
 
 | Dropout type | Associated param | Type | Notes
@@ -69,6 +96,7 @@ The model will be trained according to one either type of dropout (not both):
 | Ranged | `keep_rates_range` | `list` | `min` and `max` `keep_rate`s to be randomly set for each layer per `np.random.uniform`
 
 ## Dropout: reshuffling
+
 `keep_rates_reshuffle` determines reshuffling status for all of training.
 | Reshuffling | Dropout type | Meaning
 | :-- | :-- | :--
