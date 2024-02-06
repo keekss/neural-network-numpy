@@ -1,9 +1,0 @@
-Hyperparameter,Value
-h_layers,1
-heights,"expanding, (1060 => 1735)"
-lr,0.0006807891047803854
-batch_size,269
-keep_rates,"range: (0.9987762886945606, 1)"
-reshuff,False
-max_strikes,2
-max_consec,2

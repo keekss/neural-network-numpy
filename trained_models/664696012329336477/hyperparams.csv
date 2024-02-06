@@ -1,9 +1,0 @@
-Hyperparameter,Value
-h_layers,2
-heights,"contracting, (2480 => 1977)"
-lr,0.000977294429967189
-batch_size,2685
-keep_rates,"range: (0.9190284853407209, 1)"
-reshuff,False
-max_strikes,2
-max_consec,2

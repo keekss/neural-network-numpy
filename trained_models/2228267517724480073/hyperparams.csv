@@ -1,9 +1,0 @@
-Hyperparameter,Value
-h_layers,4
-heights,"flat, (1257 => 1257)"
-lr,0.0007124146149469566
-batch_size,2202
-keep_rates,"range: (0.9818383588286673, 1)"
-reshuff,True
-max_strikes,2
-max_consec,2
