@@ -8,8 +8,6 @@ import bz2
 import _pickle as cPickle
 from   IPython.display import display
 
-import NeuralNetworkHelper as nnh
-
 # See `readme.md` for details.
 class NeuralNetwork():
 
