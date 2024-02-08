@@ -8,28 +8,10 @@ import bz2
 import _pickle as cPickle
 from   IPython.display import display
 
+import NeuralNetworkHelper as nnh
+
 # See `readme.md` for details.
 class NeuralNetwork():
-
-    '''Generate list of hidden layer heights if requested'''
-    def shaped_heights(self, h_layers, shape, max_height, shrink_factor):
-        min, max = max_height*shrink_factor, max_height
-        # The heights of the leftmost and rightmost hidden layer
-        # Order according to shape
-        left_right_by_shape = dict(
-            flat        = (max, max),
-            contracting = (max, min),
-            expanding   = (min, max),
-        )
-        try:
-            left, right = left_right_by_shape[shape]
-        except KeyError:
-            print(f'Invalid shape.  Must be one of: {list(left_right_by_shape.keys())}')
-
-        heights = np.linspace(left, right, num=h_layers, dtype='int')
-        assert 0 not in heights, 'Height of zero not allowed'
-        self.heights_descrip = f'{shape}, ({int(left)} => {int(right)})'
-        return heights
 
     def __init__(
         # General structure
@@ -41,19 +23,18 @@ class NeuralNetwork():
         max_height     = 200,
         shrink_factor  = 0.5,
     ):
-        '''Initialize heights, weights, and other member variables.
-        See markdown above for details.'''
-        self.heights  = None
-        self.heights_descrip = None # for saving summary
-
         if manual_heights:
             self.heights = manual_heights
             self.heights_descrip = f'manual: {manual_heights}'
         else:
-            assert shrink_factor > 0 and shrink_factor <= 1, 'Shrink factor must be between 0 and 1'
-            # Since `hyperopt.quniform` returns floats
-            h_layers, max_height = int(h_layers), int(max_height)
-            self.heights  = self.shaped_heights(h_layers, shape, max_height, shrink_factor)
+            self.heights,= nnh.shaped_heights(
+                h_layers = h_layers,
+                shape    = shape, 
+                max_height = max_height,
+                shrink_factor = shrink_factor
+            )
+            self.heights_descrip = \
+                f'{shape}, ({self.heights[0]} => {int(self.heights[-1])})'
 
         self.h_layers = len(self.heights)
         self.w_layers = self.h_layers+1
