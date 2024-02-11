@@ -1,0 +1,36 @@
+\hypertarget{namespaceshaped__heights}{}\doxysection{shaped\+\_\+heights Namespace Reference}
+\label{namespaceshaped__heights}\index{shaped\_heights@{shaped\_heights}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Tuple\mbox{[}List\mbox{[}int\mbox{]}, str\mbox{]} \mbox{\hyperlink{namespaceshaped__heights_a8a2ed3018ad27e744c47893f314c1072}{shaped\+\_\+heights}} (int h\+\_\+layers=3, str shape=\textquotesingle{}flat\textquotesingle{}, int max\+\_\+height=200, float shrink\+\_\+factor=0.\+5)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceshaped__heights_a8a2ed3018ad27e744c47893f314c1072}\label{namespaceshaped__heights_a8a2ed3018ad27e744c47893f314c1072}} 
+\index{shaped\_heights@{shaped\_heights}!shaped\_heights@{shaped\_heights}}
+\index{shaped\_heights@{shaped\_heights}!shaped\_heights@{shaped\_heights}}
+\doxysubsubsection{\texorpdfstring{shaped\_heights()}{shaped\_heights()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}List\mbox{[}int\mbox{]}, str\mbox{]} shaped\+\_\+heights.\+shaped\+\_\+heights (\begin{DoxyParamCaption}\item[{int }]{h\+\_\+layers = {\ttfamily 3},  }\item[{str }]{shape = {\ttfamily \textquotesingle{}flat\textquotesingle{}},  }\item[{int }]{max\+\_\+height = {\ttfamily 200},  }\item[{float }]{shrink\+\_\+factor = {\ttfamily 0.5} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a list of hidden layer heights based on the specified shape.
+
+This method calculates the heights of the hidden layers based on the specified shape,
+maximum height, and shrink factor.
+
+Args:
+    h_layers (int): Number of hidden layers.
+    shape (str): Shape of the hidden layers. Must be one of: 'flat', 'contracting', 'expanding'.
+    max_height (int): Maximum height of the hidden layers.
+    shrink_factor (float): Shrink factor to determine the minimum height of the hidden layers.
+
+Returns:
+    Tuple[List[int], str]: Tuple containing the list of hidden layer heights and a description of the heights.
+
+Raises:
+    ValueError: If a height of zero is encountered or an invalid shape is provided.
+
+Warnings:
+    If `max_height` is provided as a float, it will be rounded to the nearest integer.\end{DoxyVerb}
+ 

@@ -1,0 +1,7 @@
+PROJECT_NAME           = "Neural Network"
+OUTPUT_DIRECTORY       = doc
+INPUT                  = scripts
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+OPTIMIZE_OUTPUT_PYTHON = YES
+EXTENSION_MAPPING      = pyw=Python

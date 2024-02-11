@@ -8,6 +8,8 @@ import bz2
 import _pickle as cPickle
 from   IPython.display import display
 
+from scripts.shaped_heights import shaped_heights
+
 # See `readme.md` for details.
 class NeuralNetwork():
 
@@ -25,7 +27,7 @@ class NeuralNetwork():
             self.heights = manual_heights
             self.heights_descrip = f'manual: {manual_heights}'
         else:
-            self.heights,= nnh.shaped_heights(
+            self.heights,= shaped_heights(
                 h_layers = h_layers,
                 shape    = shape, 
                 max_height = max_height,

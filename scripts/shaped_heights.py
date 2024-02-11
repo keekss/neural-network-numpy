@@ -4,11 +4,11 @@ import logging
 
 
 def shaped_heights(
-        h_layers:      int   = 3, # Number of hidden layers
-        shape:         str   = 'flat',
-        max_height:    int   = 200,
+        h_layers: int = 3,  # Number of hidden layers
+        shape: str = 'flat',
+        max_height: int = 200,
         shrink_factor: float = 0.5
-    ) -> Tuple[List[int], str]:
+) -> Tuple[List[int], str]:
     """
     Generate a list of hidden layer heights based on the specified shape.
 
@@ -34,8 +34,9 @@ def shaped_heights(
 
     # Ensure shrink_factor is between 0 and 1, defaulting to flat shape if not
     if not (0 < shrink_factor <= 1):
-        error_message = f'Invalid shrink factor: {shrink_factor}. Must be between 0 and 1. Defaulting to flat shape.'
-        logging.warning(error_message)
+        logging.warning(
+            f'Invalid shrink factor: {shrink_factor}. Must be between 0 and 1. Defaulting to flat shape.'
+        )
         shape = 'flat'
 
     # Ensure max_height is an integer, rounding if not
@@ -43,7 +44,8 @@ def shaped_heights(
         old_max_height = max_height
         max_height = round(max_height)
         logging.warning(
-            f'max_height was provided as a float ({old_max_height}). It has been rounded to the nearest integer ({max_height}).')
+            f'max_height was provided as a float ({old_max_height}). It has been rounded to the nearest integer ({max_height}).'
+        )
 
     # Calculate the heights of the hidden layers based on the specified shape
     height_min, height_max = max_height * shrink_factor, max_height
@@ -56,7 +58,8 @@ def shaped_heights(
         left, right = left_right_by_shape[shape]
     except KeyError:
         logging.warning(
-            f'Invalid shape. Must be one of: {list(left_right_by_shape.keys())}. Defaulting to flat shape.')
+            f'Invalid shape. Must be one of: {list(left_right_by_shape.keys())}. Defaulting to flat shape.'
+        )
         left, right = left_right_by_shape['flat']
 
     # Generate the heights of the hidden layers

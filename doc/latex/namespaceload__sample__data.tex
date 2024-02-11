@@ -1,0 +1,75 @@
+\hypertarget{namespaceload__sample__data}{}\doxysection{load\+\_\+sample\+\_\+data Namespace Reference}
+\label{namespaceload__sample__data}\index{load\_sample\_data@{load\_sample\_data}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{namespaceload__sample__data_ac672c0825a5df942786294fef1683c12}{download\+\_\+and\+\_\+save\+\_\+files}} (str url, list file\+\_\+names, str path)
+\item 
+np.\+ndarray \mbox{\hyperlink{namespaceload__sample__data_a39004d278948299bc8dc4817bbc9a134}{load\+\_\+image\+\_\+data\+\_\+from\+\_\+file}} (str path)
+\item 
+np.\+ndarray \mbox{\hyperlink{namespaceload__sample__data_adedc64e3dec451ae4e8036c63b4ab19b}{load\+\_\+label\+\_\+data\+\_\+from\+\_\+file}} (str path)
+\item 
+np.\+ndarray \mbox{\hyperlink{namespaceload__sample__data_ac9a9e8428bb44266c4248e19a9947d93}{encode\+\_\+labels\+\_\+as\+\_\+onehot}} (np.\+ndarray integer\+\_\+labels)
+\item 
+None \mbox{\hyperlink{namespaceload__sample__data_a8183da5b7815b37a566facb879b417d8}{plot\+\_\+fashion\+\_\+mnist\+\_\+images}} (np.\+ndarray images, np.\+ndarray labels)
+\item 
+Tuple\mbox{[}np.\+ndarray, np.\+ndarray, np.\+ndarray, np.\+ndarray\mbox{]} \mbox{\hyperlink{namespaceload__sample__data_ac4e60497305d3610be1f5a530832cb24}{prepare\+\_\+and\+\_\+load\+\_\+fashion\+\_\+mnist\+\_\+data}} (str path=\textquotesingle{}./data/\textquotesingle{}, bool plot=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceload__sample__data_ac672c0825a5df942786294fef1683c12}\label{namespaceload__sample__data_ac672c0825a5df942786294fef1683c12}} 
+\index{load\_sample\_data@{load\_sample\_data}!download\_and\_save\_files@{download\_and\_save\_files}}
+\index{download\_and\_save\_files@{download\_and\_save\_files}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{download\_and\_save\_files()}{download\_and\_save\_files()}}
+{\footnotesize\ttfamily  None load\+\_\+sample\+\_\+data.\+download\+\_\+and\+\_\+save\+\_\+files (\begin{DoxyParamCaption}\item[{str}]{url,  }\item[{list}]{file\+\_\+names,  }\item[{str}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Download and save files from a specified URL to a local directory.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceload__sample__data_ac9a9e8428bb44266c4248e19a9947d93}\label{namespaceload__sample__data_ac9a9e8428bb44266c4248e19a9947d93}} 
+\index{load\_sample\_data@{load\_sample\_data}!encode\_labels\_as\_onehot@{encode\_labels\_as\_onehot}}
+\index{encode\_labels\_as\_onehot@{encode\_labels\_as\_onehot}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{encode\_labels\_as\_onehot()}{encode\_labels\_as\_onehot()}}
+{\footnotesize\ttfamily  np.\+ndarray load\+\_\+sample\+\_\+data.\+encode\+\_\+labels\+\_\+as\+\_\+onehot (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{integer\+\_\+labels }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return matrix whose rows are onehot encodings of integers.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceload__sample__data_a39004d278948299bc8dc4817bbc9a134}\label{namespaceload__sample__data_a39004d278948299bc8dc4817bbc9a134}} 
+\index{load\_sample\_data@{load\_sample\_data}!load\_image\_data\_from\_file@{load\_image\_data\_from\_file}}
+\index{load\_image\_data\_from\_file@{load\_image\_data\_from\_file}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{load\_image\_data\_from\_file()}{load\_image\_data\_from\_file()}}
+{\footnotesize\ttfamily  np.\+ndarray load\+\_\+sample\+\_\+data.\+load\+\_\+image\+\_\+data\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{str}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return images loaded locally.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceload__sample__data_adedc64e3dec451ae4e8036c63b4ab19b}\label{namespaceload__sample__data_adedc64e3dec451ae4e8036c63b4ab19b}} 
+\index{load\_sample\_data@{load\_sample\_data}!load\_label\_data\_from\_file@{load\_label\_data\_from\_file}}
+\index{load\_label\_data\_from\_file@{load\_label\_data\_from\_file}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{load\_label\_data\_from\_file()}{load\_label\_data\_from\_file()}}
+{\footnotesize\ttfamily  np.\+ndarray load\+\_\+sample\+\_\+data.\+load\+\_\+label\+\_\+data\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{str}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return labels loaded locally.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceload__sample__data_a8183da5b7815b37a566facb879b417d8}\label{namespaceload__sample__data_a8183da5b7815b37a566facb879b417d8}} 
+\index{load\_sample\_data@{load\_sample\_data}!plot\_fashion\_mnist\_images@{plot\_fashion\_mnist\_images}}
+\index{plot\_fashion\_mnist\_images@{plot\_fashion\_mnist\_images}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{plot\_fashion\_mnist\_images()}{plot\_fashion\_mnist\_images()}}
+{\footnotesize\ttfamily  None load\+\_\+sample\+\_\+data.\+plot\+\_\+fashion\+\_\+mnist\+\_\+images (\begin{DoxyParamCaption}\item[{np.\+ndarray}]{images,  }\item[{np.\+ndarray}]{labels }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Plot the first 10 images and their labels from the training set.\end{DoxyVerb}
+ \mbox{\Hypertarget{namespaceload__sample__data_ac4e60497305d3610be1f5a530832cb24}\label{namespaceload__sample__data_ac4e60497305d3610be1f5a530832cb24}} 
+\index{load\_sample\_data@{load\_sample\_data}!prepare\_and\_load\_fashion\_mnist\_data@{prepare\_and\_load\_fashion\_mnist\_data}}
+\index{prepare\_and\_load\_fashion\_mnist\_data@{prepare\_and\_load\_fashion\_mnist\_data}!load\_sample\_data@{load\_sample\_data}}
+\doxysubsubsection{\texorpdfstring{prepare\_and\_load\_fashion\_mnist\_data()}{prepare\_and\_load\_fashion\_mnist\_data()}}
+{\footnotesize\ttfamily  Tuple\mbox{[}np.\+ndarray, np.\+ndarray, np.\+ndarray, np.\+ndarray\mbox{]} load\+\_\+sample\+\_\+data.\+prepare\+\_\+and\+\_\+load\+\_\+fashion\+\_\+mnist\+\_\+data (\begin{DoxyParamCaption}\item[{str }]{path = {\ttfamily \textquotesingle{}./data/\textquotesingle{}},  }\item[{bool }]{plot = {\ttfamily True} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Download compressed Fashion MNIST data to local directory, and 
+unpack data into numpy arrays. 
+
+Return (train_images, train_labels, test_images, test_labels).
+
+Args:
+    plot (bool): Whether to plot the first 10 images from the training set.
+
+Returns:
+    Tuple of (train_images, train_labels, test_images, test_labels), each
+        a matrix. Rows are examples. Columns of images are pixel values.
+        Columns of labels are a onehot encoding of the correct class.
+\end{DoxyVerb}
+ 

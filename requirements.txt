@@ -5,3 +5,4 @@ ipython
 ipykernel
 tqdm
 pickle5
+coverage
