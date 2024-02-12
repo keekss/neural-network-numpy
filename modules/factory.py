@@ -12,51 +12,67 @@ class Shape(Enum):
     EXPANDING = 'expanding'
 
 from NeuralNetwork import NeuralNetwork
+from dependency_injector import providers, containers
 
 class NeuralNetworkFactory:
     @staticmethod
-    def initialize_heights(manual_heights, auto_heights_params):
+    def initialize_heights(
+            obj: NeuralNetwork,
+            manual_heights: Optional[List[int]] = None,
+            auto_heights_params: Optional[Dict[str, Union[int, float, str]]] = None,
+    ) -> NeuralNetwork:
         if manual_heights:
-            heights = manual_heights
-            heights_shape = 'manual'
-            heights_descrip = f'manual: {manual_heights}'
+            obj.heights = manual_heights
+            obj.heights_shape = 'manual'
+            obj.heights_descrip = f'manual: {manual_heights}'
         else:
             if auto_heights_params is None:
                 auto_heights_params = {}
-            heights = NeuralNetworkFactory.auto_heights(**auto_heights_params)
-            heights_shape = auto_heights_params.get('shape', 'flat')
-            heights_descrip = f'{heights_shape}, ({heights[0]} => {int(heights[-1])})'
-        h_layers = len(heights)
-        w_layers = h_layers + 1
-        return heights, heights_shape, heights_descrip, h_layers, w_layers
+            obj.heights = NeuralNetworkFactory.auto_heights(**auto_heights_params)
+            obj.heights_shape = auto_heights_params.get('shape', 'flat')
+            obj.heights_descrip = f'{obj.heights_shape}, ({obj.heights[0]} => {int(obj.heights[-1])})'
+        obj.h_layers = len(obj.heights)
+        obj.w_layers = obj.h_layers + 1
+        return obj
 
     @staticmethod
-    def initialize_weights(inputs: int, outputs: int):
-        weights = [None] * w_layers
-        weights[0] = np.random.normal(
+    def initialize_weights(obj: NeuralNetwork) -> NeuralNetwork:
+        obj.weights = [None] * obj.w_layers
+        obj.weights[0] = np.random.normal(
             loc=0,
-            scale=np.sqrt(2/inputs),
-            size=(inputs + 1, heights[0])
+            scale=np.sqrt(2/obj.inputs),
+            size=(obj.inputs + 1, obj.heights[0])
         )
-        for i in range(1, h_layers):
-            weights[i] = np.random.normal(
-                0, np.sqrt(2/inputs),
-                size=(heights[i-1]+1, heights[i])
+        for i in range(1, obj.h_layers):
+            obj.weights[i] = np.random.normal(
+                0, np.sqrt(2/obj.inputs),
+                size=(obj.heights[i-1]+1, obj.heights[i])
             )
-        weights[-1] = np.random.normal(
-            0, np.sqrt(2/inputs),
-            size=(heights[-1]+1, outputs)
+        obj.weights[-1] = np.random.normal(
+            0, np.sqrt(2/obj.inputs),
+            size=(obj.heights[-1]+1, obj.outputs)
         )
+        return obj
 
     @staticmethod
-    def initialize_epoch_variables():
-        # Copy the logic from the NeuralNetwork class
-        # ...
+    def initialize_epoch_variables(obj: NeuralNetwork) -> NeuralNetwork:
+        obj.epoch_performance = None
+        obj.epoch_weights = []
+        obj.epoch_weight_stats = []
+        return obj
 
     @staticmethod
-    def initialize_adam_params():
-        # Copy the logic from the NeuralNetwork class
-        # ...
+    def initialize_adam_params(obj: NeuralNetwork) -> NeuralNetwork:
+        obj.adam_params = {
+            'lr': 3e-4,
+            'b1': 1-1e-1,
+            'b2': 1-1e-3,
+            'epsl': 1e-8,
+        }
+        obj.adam_t = 1
+        obj.mov_mean = [0] * obj.w_layers
+        obj.mov_var = [0] * obj.w_layers
+        return obj
 
     @staticmethod
     def create(
@@ -64,12 +80,20 @@ class NeuralNetworkFactory:
             outputs: int,
             manual_heights: Optional[List[int]] = None,
             auto_heights_params: Optional[Dict[str, Union[int, float, str]]] = None,
+            **kwargs
     ) -> NeuralNetwork:
-        obj = NeuralNetwork()
-        obj.heights, obj.heights_shape, obj.heights_descrip, obj.h_layers, obj.w_layers = NeuralNetworkFactory.initialize_heights(manual_heights, auto_heights_params)
-        obj.weights = NeuralNetworkFactory.initialize_weights(inputs, outputs)
-        obj.epoch_performance, obj.epoch_weights, obj.epoch_weight_stats = NeuralNetworkFactory.initialize_epoch_variables()
-        obj.adam_params, obj.adam_t, obj.mov_mean, obj.mov_var = NeuralNetworkFactory.initialize_adam_params()
+        obj = NeuralNetwork(inputs = inputs, outputs = outputs)
+        obj = NeuralNetworkFactory.initialize_heights(
+            obj = obj,
+            manual_heights = manual_heights,
+            auto_heights_params = auto_heights_params
+        )
+        obj = NeuralNetworkFactory.initialize_weights(obj = obj)
+
+        obj = NeuralNetworkFactory.initialize_epoch_variables(obj = obj)
+
+        obj = NeuralNetworkFactory.initialize_adam_params(obj = obj)
+        
         return obj
     
     @staticmethod
@@ -132,3 +156,7 @@ class NeuralNetworkFactory:
             raise ValueError(error_message)
 
         return heights
+    
+class Container(containers.DeclarativeContainer):
+    config = providers.Configuration('config')
+    neural_network_factory = providers.Factory(NeuralNetworkFactory)

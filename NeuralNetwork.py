@@ -5,78 +5,16 @@ import time, os
 
 from typing import List, Tuple, Optional, Union, Dict
 
-from modules.auto_heights import auto_heights
-
 
 # TODO import utils and refactor
 
 # See `readme.md` for details.
-class NeuralNetwork():
+from dependency_injector.wiring import inject, Provide
 
-    def __init__(
-            self, 
-            inputs: int,
-            outputs: int,
-            # If not using shaped heights
-            manual_heights: Optional[List[int]] = None,
-            # Auto heights parameters. Default values are set in `auto_heights.py`
-            auto_heights_params: Optional[Dict[str, Union[int, float, str]]] = None,
-    ) -> None:
-        
-        self.initialize_heights(
-            manual_heights = manual_heights,
-            auto_heights_params = auto_heights_params
-        )
-        self.initialize_weights(inputs = inputs, outputs = outputs)
-        self.initialize_epoch_variables()
-        self.initialize_adam_params()
-
-    def initialize_heights(self, manual_heights, auto_heights_params):
-        if manual_heights:
-            self.heights = manual_heights
-            self.heights_shape = 'manual'
-            self.heights_descrip = f'manual: {manual_heights}'
-        else:
-            if auto_heights_params is None:
-                auto_heights_params = {}
-            self.heights = auto_heights(**auto_heights_params)
-            self.heights_shape = auto_heights_params.get('shape', 'flat')
-            self.heights_descrip = f'{self.heights_shape}, ({self.heights[0]} => {int(self.heights[-1])})'
-        self.h_layers = len(self.heights)
-        self.w_layers = self.h_layers + 1
-
-    def initialize_weights(self, inputs: int, outputs: int):
-        self.weights = [None] * self.w_layers
-        self.weights[0] = np.random.normal(
-            loc=0,
-            scale=np.sqrt(2/inputs),
-            size=(inputs + 1, self.heights[0])
-        )
-        for i in range(1, self.h_layers):
-            self.weights[i] = np.random.normal(
-                0, np.sqrt(2/inputs),
-                size=(self.heights[i-1]+1, self.heights[i])
-            )
-        self.weights[-1] = np.random.normal(
-            0, np.sqrt(2/inputs),
-            size=(self.heights[-1]+1, outputs)
-        )
-
-    def initialize_epoch_variables(self):
-        self.epoch_performance = None
-        self.epoch_weights = []
-        self.epoch_weight_stats = []
-
-    def initialize_adam_params(self):
-        self.adam_params = {
-            'lr': 3e-4,
-            'b1': 1-1e-1,
-            'b2': 1-1e-3,
-            'epsl': 1e-8,
-        }
-        self.adam_t = 1
-        self.mov_mean = [0] * self.w_layers
-        self.mov_var = [0] * self.w_layers
+class NeuralNetwork:
+    def __init__(self, inputs: int, outputs: int):
+        self.inputs  = inputs
+        self.outputs = outputs
 
     def train(
             self, 

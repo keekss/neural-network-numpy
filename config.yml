@@ -1,0 +1,21 @@
+neural_network:
+  inputs: 10
+  outputs: 10
+  h_layers: 3
+  w_layers: 4
+  heights_shape: 'flat'
+  max_height: 200
+  shrink_factor: 0.5
+  heights: [200, 200, 200]
+  heights_descrip: 'flat, (200 => 200)'
+  epoch_performance: null
+  epoch_weights: []
+  epoch_weight_stats: []
+  adam_params:
+    lr: 3e-4
+    b1: 1-1e-1
+    b2: 1-1e-3
+    epsl: 1e-8
+  adam_t: 1
+  mov_mean: [0, 0, 0, 0]
+  mov_var: [0, 0, 0, 0]
