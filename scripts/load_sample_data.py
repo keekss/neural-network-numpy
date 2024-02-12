@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from typing import Tuple
 
 import logging
-import scripts.logging_config as _
+from . import logging_config as _
 
 # Main function is prepare_and_load_fashion_mnist_data
 

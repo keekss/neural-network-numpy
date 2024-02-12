@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 
-from scripts.shaped_heights import shaped_heights
+from neural_network.auto_heights import shaped_heights
 
 class TestShapedHeights(unittest.TestCase):
     def test_shaped_heights_logic(self):

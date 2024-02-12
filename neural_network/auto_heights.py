@@ -2,8 +2,7 @@ from typing import List, Tuple
 import numpy as np
 import logging
 
-
-def shaped_heights(
+def auto_heights(
         h_layers: int = 3,  # Number of hidden layers
         shape: str = 'flat',
         max_height: int = 200,
