@@ -1,6 +1,6 @@
 PROJECT_NAME           = "Neural Network"
 OUTPUT_DIRECTORY       = doc
-INPUT                  = scripts
+INPUT                  = modules
 RECURSIVE              = YES
 EXTRACT_ALL            = YES
 OPTIMIZE_OUTPUT_PYTHON = YES

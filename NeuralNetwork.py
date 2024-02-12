@@ -5,12 +5,6 @@ import time, os
 
 from typing import List, Tuple, Optional, Union, Dict
 
-
-# TODO import utils and refactor
-
-# See `readme.md` for details.
-from dependency_injector.wiring import inject, Provide
-
 class NeuralNetwork:
     def __init__(self, inputs: int, outputs: int):
         self.inputs  = inputs

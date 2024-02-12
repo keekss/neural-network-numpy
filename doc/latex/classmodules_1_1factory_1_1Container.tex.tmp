@@ -1,0 +1,48 @@
+\hypertarget{classmodules_1_1factory_1_1Container}{}\doxysection{modules.\+factory.\+Container Class Reference}
+\label{classmodules_1_1factory_1_1Container}\index{modules.factory.Container@{modules.factory.Container}}
+
+
+Inheritance diagram for modules.\+factory.\+Container\+:
+% FIG 0
+
+
+Collaboration diagram for modules.\+factory.\+Container\+:
+% FIG 1
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmodules_1_1factory_1_1Container_a9b23dfcc5697da53c8a7e8f6736047e6}{config}} = providers.\+Configuration(\textquotesingle{}config\textquotesingle{})
+\item 
+\mbox{\hyperlink{classmodules_1_1factory_1_1Container_a9052023b47c8a7c1a49072fdd14f2076}{neural\+\_\+network\+\_\+factory}} = providers.\+Factory(\mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory}{Neural\+Network\+Factory}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}IoC container for dependency injection.
+
+This container manages the dependencies and configurations for the application. It provides a centralized location for creating and accessing instances of classes and configurations.
+
+Attributes:
+    config (providers.Configuration): A provider for accessing the application's configuration settings.
+    neural_network_factory (providers.Factory): A factory provider for creating and managing instances of the NeuralNetworkFactory class.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmodules_1_1factory_1_1Container_a9b23dfcc5697da53c8a7e8f6736047e6}\label{classmodules_1_1factory_1_1Container_a9b23dfcc5697da53c8a7e8f6736047e6}} 
+\index{modules.factory.Container@{modules.factory.Container}!config@{config}}
+\index{config@{config}!modules.factory.Container@{modules.factory.Container}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily modules.\+factory.\+Container.\+config = providers.\+Configuration(\textquotesingle{}config\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmodules_1_1factory_1_1Container_a9052023b47c8a7c1a49072fdd14f2076}\label{classmodules_1_1factory_1_1Container_a9052023b47c8a7c1a49072fdd14f2076}} 
+\index{modules.factory.Container@{modules.factory.Container}!neural\_network\_factory@{neural\_network\_factory}}
+\index{neural\_network\_factory@{neural\_network\_factory}!modules.factory.Container@{modules.factory.Container}}
+\doxysubsubsection{\texorpdfstring{neural\_network\_factory}{neural\_network\_factory}}
+{\footnotesize\ttfamily modules.\+factory.\+Container.\+neural\+\_\+network\+\_\+factory = providers.\+Factory(\mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory}{Neural\+Network\+Factory}})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/\mbox{\hyperlink{factory_8py}{factory.\+py}}\end{DoxyCompactItemize}

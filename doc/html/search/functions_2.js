@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['load_5fimage_5fdata_5ffrom_5ffile_0',['load_image_data_from_file',['../namespaceload__sample__data.html#a39004d278948299bc8dc4817bbc9a134',1,'load_sample_data']]],
-  ['load_5flabel_5fdata_5ffrom_5ffile_1',['load_label_data_from_file',['../namespaceload__sample__data.html#adedc64e3dec451ae4e8036c63b4ab19b',1,'load_sample_data']]]
+  ['clear_5fand_5fdisplay_5foutput_0',['clear_and_display_output',['../namespacemodules_1_1visualization.html#ad0b902979b4b7e160e17e0525c86924d',1,'modules::visualization']]],
+  ['create_1',['create',['../classmodules_1_1factory_1_1NeuralNetworkFactory.html#af2510f7d2aaa78a23ffa66e7f8637c52',1,'modules::factory::NeuralNetworkFactory']]]
 ];

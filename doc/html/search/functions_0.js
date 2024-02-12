@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['download_5fand_5fsave_5ffiles_0',['download_and_save_files',['../namespaceload__sample__data.html#ac672c0825a5df942786294fef1683c12',1,'load_sample_data']]]
+  ['_5f_5finit_5f_5f_0',['__init__',['../namespacemodules_1_1visualization.html#aebc45bcb3cc4d4fcb5381cd0e723836e',1,'modules::visualization']]]
 ];

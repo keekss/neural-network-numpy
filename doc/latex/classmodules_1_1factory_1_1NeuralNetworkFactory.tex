@@ -1,0 +1,94 @@
+\hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory}{}\doxysection{modules.\+factory.\+Neural\+Network\+Factory Class Reference}
+\label{classmodules_1_1factory_1_1NeuralNetworkFactory}\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Neural\+Network \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_af2510f7d2aaa78a23ffa66e7f8637c52}{create}} (int inputs, int outputs, Optional\mbox{[}List\mbox{[}int\mbox{]}\mbox{]} manual\+\_\+heights=None, Optional\mbox{[}Dict\mbox{[}str, Union\mbox{[}int, float, str\mbox{]}\mbox{]}\mbox{]} auto\+\_\+heights\+\_\+params=None, $\ast$$\ast$kwargs)
+\item 
+Neural\+Network \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_a03dc65e5151a24c4d2ff69c31c7dd7a0}{initialize\+\_\+heights}} (Neural\+Network obj, Optional\mbox{[}List\mbox{[}int\mbox{]}\mbox{]} manual\+\_\+heights=None, Optional\mbox{[}Dict\mbox{[}str, Union\mbox{[}int, float, str\mbox{]}\mbox{]}\mbox{]} auto\+\_\+heights\+\_\+params=None)
+\item 
+Neural\+Network \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_ac10919c56c505834b7640653e21e2f10}{initialize\+\_\+weights}} (Neural\+Network obj)
+\item 
+Neural\+Network \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_a9ba2ba607c40fc13b4bc82cde0303b92}{initialize\+\_\+epoch\+\_\+variables}} (Neural\+Network obj)
+\item 
+Neural\+Network \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_a1a301d069cf895306155ee22753cd5fe}{initialize\+\_\+adam\+\_\+params}} (Neural\+Network obj)
+\item 
+List\mbox{[}int\mbox{]} \mbox{\hyperlink{classmodules_1_1factory_1_1NeuralNetworkFactory_aa2f8d10ac49f156494ece05593c1cefb}{auto\+\_\+heights}} (int h\+\_\+layers=3, \mbox{\hyperlink{classmodules_1_1factory_1_1Shape}{Shape}} shape=\mbox{\hyperlink{classmodules_1_1factory_1_1Shape_a459dc940a8fa4a2faeb68e6900b63b95}{Shape.\+FLAT}}, int max\+\_\+height=200, float shrink\+\_\+factor=0.\+5)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_aa2f8d10ac49f156494ece05593c1cefb}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_aa2f8d10ac49f156494ece05593c1cefb}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!auto\_heights@{auto\_heights}}
+\index{auto\_heights@{auto\_heights}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{auto\_heights()}{auto\_heights()}}
+{\footnotesize\ttfamily  List\mbox{[}int\mbox{]} modules.\+factory.\+Neural\+Network\+Factory.\+auto\+\_\+heights (\begin{DoxyParamCaption}\item[{int }]{h\+\_\+layers = {\ttfamily 3},  }\item[{\mbox{\hyperlink{classmodules_1_1factory_1_1Shape}{Shape}} }]{shape = {\ttfamily \mbox{\hyperlink{classmodules_1_1factory_1_1Shape_a459dc940a8fa4a2faeb68e6900b63b95}{Shape.\+FLAT}}},  }\item[{int }]{max\+\_\+height = {\ttfamily 200},  }\item[{float }]{shrink\+\_\+factor = {\ttfamily 0.5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}@brief Generate a list of hidden layer heights based on the specified shape.
+
+This method calculates the heights of the hidden layers based on the specified shape,
+maximum height, and shrink factor. If the shrink factor is not between 0 and 1, an error is logged and an exception is raised. If max_height is provided as a float, it is rounded to the nearest integer and a warning is logged.
+
+@param h_layers Number of hidden layers.
+@param shape Shape of the hidden layers. Must be one of: 'flat', 'contracting', 'expanding'.
+@param max_height Maximum height of the hidden layers. If provided as a float, it is rounded to the nearest integer.
+@param shrink_factor Shrink factor to determine the minimum height of the hidden layers. Must be between 0 and 1.
+
+@return The list of hidden layer heights.
+
+@throws ValueError If a height of zero is encountered, an invalid shape is provided, or the shrink factor is not between 0 and 1.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_af2510f7d2aaa78a23ffa66e7f8637c52}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_af2510f7d2aaa78a23ffa66e7f8637c52}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!create@{create}}
+\index{create@{create}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily  Neural\+Network modules.\+factory.\+Neural\+Network\+Factory.\+create (\begin{DoxyParamCaption}\item[{int}]{inputs,  }\item[{int}]{outputs,  }\item[{Optional\mbox{[}List\mbox{[}int\mbox{]}\mbox{]} }]{manual\+\_\+heights = {\ttfamily None},  }\item[{Optional\mbox{[}Dict\mbox{[}str, Union\mbox{[}int, float, str\mbox{]}\mbox{]}\mbox{]} }]{auto\+\_\+heights\+\_\+params = {\ttfamily None},  }\item[{$\ast$$\ast$}]{kwargs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Creates a new instance of the NeuralNetwork class and initializes it with the given parameters.
+
+:param inputs: The number of inputs to the neural network.
+:param outputs: The number of outputs from the neural network.
+:param manual_heights: A list of heights for each layer in the neural network. If this is None, the heights will be automatically calculated.
+:param auto_heights_params: A dictionary of parameters for automatically calculating the heights of the layers. This is ignored if manual_heights is not None.
+:param kwargs: Additional keyword arguments to pass to the NeuralNetwork constructor.
+:return: A new instance of the NeuralNetwork class.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_a1a301d069cf895306155ee22753cd5fe}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_a1a301d069cf895306155ee22753cd5fe}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!initialize\_adam\_params@{initialize\_adam\_params}}
+\index{initialize\_adam\_params@{initialize\_adam\_params}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{initialize\_adam\_params()}{initialize\_adam\_params()}}
+{\footnotesize\ttfamily  Neural\+Network modules.\+factory.\+Neural\+Network\+Factory.\+initialize\+\_\+adam\+\_\+params (\begin{DoxyParamCaption}\item[{Neural\+Network}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_a9ba2ba607c40fc13b4bc82cde0303b92}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_a9ba2ba607c40fc13b4bc82cde0303b92}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!initialize\_epoch\_variables@{initialize\_epoch\_variables}}
+\index{initialize\_epoch\_variables@{initialize\_epoch\_variables}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{initialize\_epoch\_variables()}{initialize\_epoch\_variables()}}
+{\footnotesize\ttfamily  Neural\+Network modules.\+factory.\+Neural\+Network\+Factory.\+initialize\+\_\+epoch\+\_\+variables (\begin{DoxyParamCaption}\item[{Neural\+Network}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_a03dc65e5151a24c4d2ff69c31c7dd7a0}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_a03dc65e5151a24c4d2ff69c31c7dd7a0}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!initialize\_heights@{initialize\_heights}}
+\index{initialize\_heights@{initialize\_heights}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{initialize\_heights()}{initialize\_heights()}}
+{\footnotesize\ttfamily  Neural\+Network modules.\+factory.\+Neural\+Network\+Factory.\+initialize\+\_\+heights (\begin{DoxyParamCaption}\item[{Neural\+Network}]{obj,  }\item[{Optional\mbox{[}List\mbox{[}int\mbox{]}\mbox{]} }]{manual\+\_\+heights = {\ttfamily None},  }\item[{Optional\mbox{[}Dict\mbox{[}str, Union\mbox{[}int, float, str\mbox{]}\mbox{]}\mbox{]} }]{auto\+\_\+heights\+\_\+params = {\ttfamily None} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyVerb}Initializes the heights of the neural network.
+
+Args:
+    obj (NeuralNetwork): The neural network object.
+    manual_heights (Optional[List[int]], optional): A list of manual heights for each layer. Defaults to None.
+    auto_heights_params (Optional[Dict[str, Union[int, float, str]]], optional): Parameters for automatic height calculation. Defaults to None.
+
+Returns:
+    NeuralNetwork: The neural network object with initialized heights.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classmodules_1_1factory_1_1NeuralNetworkFactory_ac10919c56c505834b7640653e21e2f10}\label{classmodules_1_1factory_1_1NeuralNetworkFactory_ac10919c56c505834b7640653e21e2f10}} 
+\index{modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}!initialize\_weights@{initialize\_weights}}
+\index{initialize\_weights@{initialize\_weights}!modules.factory.NeuralNetworkFactory@{modules.factory.NeuralNetworkFactory}}
+\doxysubsubsection{\texorpdfstring{initialize\_weights()}{initialize\_weights()}}
+{\footnotesize\ttfamily  Neural\+Network modules.\+factory.\+Neural\+Network\+Factory.\+initialize\+\_\+weights (\begin{DoxyParamCaption}\item[{Neural\+Network}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modules/\mbox{\hyperlink{factory_8py}{factory.\+py}}\end{DoxyCompactItemize}
