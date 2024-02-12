@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/python:3.10
 
-ENV PYTHONPATH "${PYTHONPATH}:/scripts:/modules"
+# ENV PYTHONPATH "${PYTHONPATH}:/scripts:/modules"
 
 # Install Doxygen
 RUN apt-get update && apt-get install -y doxygen

@@ -6,12 +6,13 @@ import matplotlib.pyplot as plt
 from typing import Tuple
 
 import logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s') # Set up logging
+import scripts.logging_config as _
 
 # Main function is prepare_and_load_fashion_mnist_data
 
 # Helper functions -----------------------------------------------------------
 
+# TODO fix path
 def download_and_save_files(url: str, file_names: list, path: str) -> None:
     """Download and save files from a specified URL to a local directory."""
     os.makedirs(path, exist_ok=True)  # Create path if it doesn't exist.
@@ -20,8 +21,8 @@ def download_and_save_files(url: str, file_names: list, path: str) -> None:
     for file in file_names:
         if not os.path.isfile(os.path.join(path, file)):
             urlretrieve(url + file, os.path.join(path, file))
-            print(f"Downloaded {file} to {path}")
-        else: print(f"File {file} already exists in {path}")
+            logging.info(f"Downloaded {file} to {path}")
+        else: logging.info(f"File {file} already exists in {path}")
 
 def load_image_data_from_file(path: str) -> np.ndarray:
     """Return images loaded locally."""
