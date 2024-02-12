@@ -6,3 +6,5 @@ ipykernel
 tqdm
 pickle5
 coverage
+dependency_injector
+pyyaml
