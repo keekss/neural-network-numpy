@@ -40,10 +40,7 @@ class NeuralNetwork():
             if auto_heights_params is None:
                 auto_heights_params = {}
             self.heights = auto_heights(**auto_heights_params)
-            try:
-                self.heights_shape = auto_heights_params['shape']
-            except KeyError:
-                self.heights_shape = 'flat'
+            self.heights_shape = auto_heights_params.get('shape', 'flat')
             self.heights_descrip = f'{self.heights_shape}, ({self.heights[0]} => {int(self.heights[-1])})'
         self.h_layers = len(self.heights)
         self.w_layers = self.h_layers + 1
